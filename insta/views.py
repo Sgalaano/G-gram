@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import NewStatusForm, NewCommentForm
+from .forms import NewstatusForm, NewCommentForm
 from .models import Image, Profile, Comments
 
 @login_required(login_url='/accounts/login/')
