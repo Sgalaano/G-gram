@@ -12,3 +12,4 @@ def timelines(request):
     comments = Comments.objects.order_by('-time_comments')
     return render(request, 'timelines.html', {'images':images, 'profiles':profiles, 'user_profile':user_profile, 'comments':comments})
 '''
+Function that renders user profile
