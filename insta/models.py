@@ -8,4 +8,13 @@ class Profile(models.Model):
     user_bio = models.TextField()
     user = models.ForeignKey(user)
     last_update = models.DateTimeField(auto_now_add=True, null=True)
+
+    class Meta:
+        ordering =['-last_update']
+
+    def __str__(self):
+        return self.user.username
+
+    def save_profile(self):
+        self.save()
     
