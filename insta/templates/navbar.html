@@ -2,31 +2,60 @@
 <html lang="en">
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" >G-GRAM</a>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="search" aria-label="search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">search</button>
-      </form>
-    <div>
-      <a href="#">Explore</a>
-    </div>
-    <div>
-        <a href="#">Activity</a>
-    </div>
-    <div>
-        <a href="#">Profile</a>
-    </div>
-    
-        
-    </div>
-  </div>
-</nav>
+
+ <nav class="navbar navbar-default navbar-fixed-top" style="padding:5px">
+
+   <div class="container">
+
+     <h1 class="logo"><a href="/"><img src="https://seeklogo.com/images/I/instagram-new-2016-logo-D9D42A0AD4-seeklogo.com.png
+https://seeklogo.com/images/I/instagram-new-2016-logo-D9D42A0AD4-seeklogo.com.png
+" alt="" style="width:35px">
+     </a>|
+   </h1>
+     <div class="logoname" style="display:inline">
+       <img src="https://seeklogo.com/images/I/instagram-logo-468275D4F0-seeklogo.com.png
+https://seeklogo.com/images/I/instagram-logo-468275D4F0-seeklogo.com.png
+" alt="" style="width:135px">
+     </div>
+     <ul class="nav nav-right">
+       <form class="form-group" action="{% url 'findProfile' %}" method="post" style="padding: 8px; text-align: center;border-radius: 8px;border: 2px solid #ddd;outline: 0;margin-right:400px; display:inline" role="search">
+         {% csrf_token %}
+         <input type="text" name="images" placeholder="Search" style="border:none; padding:10px; background-color:inherit">
+       </form>
+       {% if user.is_authenticated %}
+       <div class="iconns" style="font-size:40px; display:inline">
+         <a href="{% url 'newStatus' user.username %}">
+       <i class="material-icons" style="font-size:40px">add</i>
+         </a>
+         <a href="{% url 'myProfile' %}">
+           <i class="material-icons" style="font-size:40px">perm_identity</i>
+         </a>
+         <a href="/logout">
+           <i class="material-icons" style="font-size:40px">lock_open</i>
+         </a>
+     </ul>
+     {% else %}
+     <li>
+       <a href="/accounts/login"><i class="material-icons" style="font-size:40px">lock_outline</i></a>
+     </li>
+
+     {% endif %}
+
+     </div>
+     </ul>
+   </div>
+
+
+ </nav>
+
+
 </body>
 </html>
+Message Input
+
+
+Message Galaano
