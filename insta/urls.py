@@ -13,3 +13,5 @@ urlpatterns=[
  url(r'^single_image/likes/(\d+)', views.single_image_like, name='singleImageLike'),
  url(r'^new/comment/(?P<username>[-_\w.]+)$', views.new_comment, name='newComment'),
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
