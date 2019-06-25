@@ -16,7 +16,7 @@ Function that renders the user profile
 @login_required(login_url='/accounts/login/')
 def profile(request):
     current_user = request.user
-    profile = Profile.objects.get(user_id=current_user.id)
+    profile = Profile.objects.filter(user_id=current_user.id)
     images = Image.objects.all().filter(profile_id=current_user.id)
     return render(request, 'profile.html', {'images':images, 'profile':profile})
 
